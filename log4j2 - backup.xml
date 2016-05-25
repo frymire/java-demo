@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+	<properties>
+		<!-- This just defines some variables. -->
+		<property name="MainLevel">trace</property>
+		<property name="SubclassLevel">trace</property>
+	</properties>
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<!-- NOTE: logging "%method" and "%L" are expensive. -->
+			<PatternLayout pattern="%-5.5sequenceNumber  %-5.5relative  %-15.15logger{1}  %-15.15method  Line #%L  %-13marker (%-5level) %X{eventTypes}:  %msg%n"/> 
+			<filters>
+				<!-- The MapFiler filters MapMessages only. -->
+				<MapFilter onMatch="ACCEPT" onMismatch="DENY" operator="or">
+					<KeyValuePair key="userID" value="yourMom"/>
+					<KeyValuePair key="type" value="special"/>
+				</MapFilter>			
+				<!-- ThresholdFilters specify whether to handle messages at or above the specified priority. -->
+				<!-- <ThresholdFilter level="DEBUG" onMatch="NEUTRAL" onMismatch="DENY"/> -->
+				<!-- <TimeFilter start="12:00:00" end="13:30:00" onMatch="ACCEPT" onMismatch="DENY"/>	 -->				
+			</filters>
+		</Console>
+		<File name="MarkerFiltering" fileName="Log4JDemo Log - markers.txt" append="false">
+		<!-- You might say fileName="Log4JDemo Log ${date:MM-dd-yyyy kkmmss}.txt", if you wanted to add the date to the filename. -->
+			<PatternLayout pattern="%date{MMM dd YYYY HH:mm:ss}  %-5.5sequenceNumber  %-5.5relative  %-15.15logger{1}  %-15.15method  Line #%L  %-13marker (%-5level)  %msg%n"/>
+			<filters>
+				<MarkerFilter marker="FLOW" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+				<MarkerFilter marker="Real" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+				<MarkerFilter marker="Fake" onMatch="DENY"   onMismatch="NEUTRAL"/>
+			</filters>
+		</File>		
+		<Routing name="ContextRouting">
+			<!-- <Routes pattern="$${map:type}"> -->
+			<Routes pattern="$${ctx:eventTypes}">
+				<Route key="exciting">
+					<File name="Exciting" fileName="Log4JDemo Log - ${ctx:eventTypes}.txt" append="false">
+						<PatternLayout pattern="%X{eventTypes}: %msg%n"/>
+					</File>
+				</Route>
+				<Route key="boring">
+					<File name="Boring" fileName="Log4JDemo Log - ${ctx:eventTypes}.txt" append="false">
+						<PatternLayout pattern="%X{eventTypes}: %msg%n"/>
+					</File>
+				</Route>	
+			</Routes>
+		</Routing>
+		<Routing name="MapRouting">
+			<Routes pattern="$${map:type}">
+				<Route key="special">
+					<!-- The documentation says I should be able to do this: <Route appender-ref="Console"/>, but it doesn't handle "appender-ref". -->
+					<!-- Declaring the appenders inline works, though. -->
+					<Console name="SpecialConsole">
+						<PatternLayout pattern="Special: %X %m%n"/>
+						<!-- If you wanted to, you can add a ThreadContextMapFilter like this...
+						<ThreadContextMapFilter onMatch="DENY" onMismatch="NEUTRAL" operator="and">
+							<KeyValuePair key="eventTypes" value="exciting"/>				
+						</ThreadContextMapFilter>						
+						-->
+					</Console>				
+				</Route>
+			</Routes>
+		</Routing>			
+	</appenders>
+	<loggers>
+		<root level="${MainLevel}">
+			<appender-ref ref="Console"/>
+			<appender-ref ref="ContextRouting"/>
+			<appender-ref ref="MapRouting"/>			
+		</root>
+		<!-- You can set up different routers for different packages and classes like this. -->
+		<logger name="us.frymire.loggingDemos.Log4JDemoClass" level="${SubclassLevel}" additivity="false">
+			<!-- Add multiple appenders to write to the console and a text file. --> 
+			<appender-ref ref="Console"/>
+			<appender-ref ref="MarkerFiltering"/>
+		</logger>		
+	</loggers>
+</configuration>

@@ -1,0 +1,22 @@
+exciting: Print out some matrices.
+exciting: 
+
+4	6	4	6	
+1	
+8	4	0	0	
+8	4	6	
+Transient value = 80.
+
+exciting: 
+
+1	2	3	4	5	
+
+exciting: 
+
+1	2	
+3	4	5	
+
+
+exciting: type="special" userID="frymire"
+exciting: type="normal" userID="yourMom"
+exciting: exit

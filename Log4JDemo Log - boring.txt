@@ -1,0 +1,15 @@
+boring: Call generateInsult().
+boring: entry params(true, 6)
+boring: Let's get going.
+boring: Killing bugs.
+boring: 1 + 2 = 3.
+boring: Wet floor.
+boring: Tilt!
+boring: We're all gonna die!
+boring: exit with(You're ugly.)
+boring: You're ugly.
+boring: Killing bugs.
+boring: 1 + 2 = 3.
+boring: Wet floor.
+boring: Tilt!
+boring: We're all gonna die!
