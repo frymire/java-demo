@@ -3,9 +3,8 @@ package datastructures;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Vector;
+//import java.util.Vector;
 
-@SuppressWarnings("unused")
 public class MultipleIterables implements Iterable<Integer> {
 	
 	// At some point, we might want to switch from an ArrayList (which is unsynchronized), 
@@ -18,9 +17,15 @@ public class MultipleIterables implements Iterable<Integer> {
 	private List<String> m_strings = new ArrayList<>();
 	
 	public MultipleIterables() {		
-		m_ints.add(1); 				m_ints.add(2); 				m_ints.add(3);		
-		m_doubles.add(4.0); 		m_doubles.add(5.0); 		m_doubles.add(6.0);		
-		m_strings.add("seven"); 	m_strings.add("eight"); 	m_strings.add("nine");		
+		m_ints.add(1);
+		m_ints.add(2);
+		m_ints.add(3);		
+		m_doubles.add(4.0);
+		m_doubles.add(5.0);
+		m_doubles.add(6.0);		
+		m_strings.add("seven");
+		m_strings.add("eight");
+		m_strings.add("nine");		
 	}
 	
 	// We'll use the iterator for the whole class to provide access to the ints
