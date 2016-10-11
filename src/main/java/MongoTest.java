@@ -10,6 +10,12 @@ import com.mongodb.DBCursor;
 
 import java.io.IOException;
 
+/*
+ * To run this, first run 
+ *  
+ *   > mongod --dbpath={path to MongoDB data}
+ *   
+ */
 public class MongoTest {
 
 	public static void main(String[] args) throws IOException {
