@@ -24,7 +24,7 @@ public class UUIDs {
 		System.out.println(u1 == u3); // true, but misleading.  Don't use == to compare UUIDs		
 		System.out.println(u1 == u4); // false, even though the bits match. Don't use == to compare UUIDs
 		System.out.println(u1.equals(u4)); // true		
-		
+		 
 	} // main
 
 } // class UUIDs
