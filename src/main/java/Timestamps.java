@@ -5,6 +5,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import java.time.Duration;
 
 public class Timestamps {
   
@@ -23,6 +24,12 @@ public class Timestamps {
     
     Instant instant = zonedDateTime.toInstant();
     System.out.println(instant);
-    System.out.println(instant.toEpochMilli());    
+    System.out.println(instant.toEpochMilli());
+    
+    Instant instantPlus5Seconds = zonedDateTime.toInstant().plusSeconds(5);
+    System.out.println(instantPlus5Seconds);
+    System.out.println(instantPlus5Seconds.toEpochMilli());
+    
+    System.out.println(Duration.between(instant, instantPlus5Seconds).getSeconds());
   }  
 }
