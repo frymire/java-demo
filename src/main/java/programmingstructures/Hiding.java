@@ -10,7 +10,7 @@ public class Hiding {
 
 	public class Child extends Parent {
 		
-		// Without any warnings or annotations, Java let's you hide the m_protectMe in the Parent class
+		// Without any warnings or annotations, Java lets you hide the m_protectMe in the Parent class
 		private String m_protectMe = "Child";
 		
 		// This method will use the local value of m_protectMe, which hides that of the parent, but any methods
@@ -25,7 +25,5 @@ public class Hiding {
    		Child c = (new Hiding()).new Child();
    		c.childSpeak(); 	// "Child"
    		c.talk(); 			// "Parent"
-   
-   	} // main
-
-} // Hiding
+   	}
+}
