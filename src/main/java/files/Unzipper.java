@@ -70,7 +70,9 @@ public class Unzipper {
 	
 	
 	// Open an existing zip archive called "ZipDemo.zip" and extract the contents to the "Unzipped Files" folder
-	public static void main(String[] args) { new Unzipper("ZipDemo.zip").unzipTo("Unzipped Files"); }
+	public static void main(String[] args) {
+		new Unzipper("ZipDemo.zip").unzipTo("Unzipped Files");
+	}
 
 	
 } // Unzipper
