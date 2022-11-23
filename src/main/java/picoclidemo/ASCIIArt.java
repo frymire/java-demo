@@ -2,13 +2,6 @@ package picoclidemo;
 
 // Quick start demo. See https://picocli.info/quick-guide.html.
 
-/**
- * ASCII Art: Basic Picocli based sample application
- * Explanation: <a href="https://picocli.info/quick-guide.html#_basic_example_asciiart">Picocli quick guide</a>
- * Source Code: <a href="https://github.com/remkop/picocli/blob/master/picocli-examples/src/main/java/picocli/examples/i18n/I18NDemo.java">GitHub</a> 
- * @author Andreas Deininger
- *
- */
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;

@@ -3,19 +3,22 @@ package picoclidemo;
 // See https://picocli.info/#_mutually_dependent_options
 
 import picocli.CommandLine;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
+import picocli.CommandLine.ArgGroup;
 
 import java.util.Objects;
 
-@CommandLine.Command(name = "co-occur")
+@Command(name = "co-occur")
 public class MutuallyDependentOptionsDemo implements Runnable {
 
-  @CommandLine.ArgGroup(exclusive = false) // implies default multiplicity = "0..1"
+  @ArgGroup(exclusive = false) // implies default multiplicity = "0..1"
   Dependent dependent;
 
   static class Dependent {
-    @CommandLine.Option(names = "-a", required = true) int a;
-    @CommandLine.Option(names = "-b", required = true) int b;
-    @CommandLine.Option(names = "-c", required = true) int c;
+    @Option(names = "-a", required = true) int a;
+    @Option(names = "-b", required = true) int b;
+    @Option(names = "-c", required = true) int c;
   }
 
   @Override

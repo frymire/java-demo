@@ -4,9 +4,7 @@ package picoclidemo;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
-import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Parameters;
-import picocli.CommandLine.Spec;
 
 import java.util.Locale;
 
@@ -20,7 +18,6 @@ import java.util.Locale;
 )
 // Since this doesn't implement Runnable or Callable, you must specify subcommand(s).
 public class ISOCodeResolver {
-  @Spec CommandSpec spec;
 
   @Command(name = "country", description = "Resolves ISO country codes (ISO-3166-1)")
   // When the 'country' command is parsed, this method implements the logic. No need for a separate run() method.
