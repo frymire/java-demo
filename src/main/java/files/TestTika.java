@@ -12,7 +12,7 @@ public class TestTika {
 
 	public static void main(String[] args) {
 
-		String inputFolderName = "Tika Test Files";
+		String inputFolderName = "Tika_Test_Files";
 		String outputFolderName = "Tika_Test_Outputs";
 
 		// Set up an instance of Tika to do the parsing for us
