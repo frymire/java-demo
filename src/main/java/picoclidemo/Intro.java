@@ -18,7 +18,7 @@ import java.awt.image.BufferedImage;
         version = "ASCIIArt 1.0",
         mixinStandardHelpOptions = true // adds --help and --version options
 )
-public class ASCIIArt implements Runnable { // by implementing Runnable or Callable, the class becomes a CLI command
+public class Intro implements Runnable { // by implementing Runnable or Callable, the class becomes a CLI command
 
   @Option(names = { "-s", "--font-size" }, description = "Font size") // add an option to the CLI
   int fontSize = 14;
@@ -58,7 +58,7 @@ public class ASCIIArt implements Runnable { // by implementing Runnable or Calla
 //    args = new String[]{"-h"};
     args = new String[]{"--font-size=15", "Hello", "picocli"};
 
-    CommandLine commandLine = new CommandLine(new ASCIIArt());
+    CommandLine commandLine = new CommandLine(new Intro());
     commandLine.usage(System.out);
 
     // CommandLine.execute() parses the command line, handles errors, handles usage/version requests, and invokes run().

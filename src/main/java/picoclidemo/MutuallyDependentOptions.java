@@ -10,7 +10,7 @@ import picocli.CommandLine.ArgGroup;
 import java.util.Objects;
 
 @Command(name = "co-occur")
-public class MutuallyDependentOptionsDemo implements Runnable {
+public class MutuallyDependentOptions implements Runnable {
 
   @ArgGroup(exclusive = false) // implies default multiplicity = "0..1"
   Dependent dependent;
@@ -35,7 +35,7 @@ public class MutuallyDependentOptionsDemo implements Runnable {
   public static void main(String[] args) {
 //    args = new String[]{"-b", "5"}; // error, if any argument is specified, all three are required
     args = new String[]{"-a", "4", "-b=5", "-c=6"};
-    CommandLine commandLine = new CommandLine(new MutuallyDependentOptionsDemo());
+    CommandLine commandLine = new CommandLine(new MutuallyDependentOptions());
     System.exit(commandLine.execute(args));
   }
 }

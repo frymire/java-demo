@@ -8,7 +8,7 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.ArgGroup;
 
 @Command(name = "exclusivedemo")
-public class MutuallyExclusiveOptionsDemo implements Runnable {
+public class MutuallyExclusiveOptions implements Runnable {
 
   @ArgGroup(exclusive = true, multiplicity = "1")
   Exclusive exclusive;
@@ -30,7 +30,7 @@ public class MutuallyExclusiveOptionsDemo implements Runnable {
   public static void main(String[] args) {
     args = new String[]{"-b", "5"};
 //    args = new String[]{"-b=5", "-c=6"}; // error, since these options are mutually exclusive
-    CommandLine commandLine = new CommandLine(new MutuallyExclusiveOptionsDemo());
+    CommandLine commandLine = new CommandLine(new MutuallyExclusiveOptions());
     System.exit(commandLine.execute(args));
   }
 }

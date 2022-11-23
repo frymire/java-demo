@@ -17,7 +17,7 @@ import java.util.Locale;
         description = "Resolves ISO country codes (ISO-3166-1) or language codes (ISO 639-1/-2)"
 )
 // Since this doesn't implement Runnable or Callable, you must specify subcommand(s).
-public class ISOCodeResolver {
+public class Subcommands {
 
   @Command(name = "country", description = "Resolves ISO country codes (ISO-3166-1)")
   // When the 'country' command is parsed, this method implements the logic. No need for a separate run() method.
@@ -38,12 +38,12 @@ public class ISOCodeResolver {
   }
 
   public static void main(String[] args) {
-    CommandLine commandLine = new CommandLine(new ISOCodeResolver());
-    commandLine.execute(new String[]{"help"});
+    CommandLine commandLine = new CommandLine(new Subcommands());
+    commandLine.execute("help");
     System.out.println();
-    commandLine.execute(new String[]{"country", "cn", "fr", "th"});
+    commandLine.execute("country", "cn", "fr", "th");
     System.out.println();
-    commandLine.execute(new String[]{"language", "de", "cs", "en"});
+    commandLine.execute("language", "de", "cs", "en");
   }
 }
 
