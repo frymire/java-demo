@@ -23,10 +23,11 @@ public class Intro implements Runnable { // by implementing Runnable or Callable
   @Option(names = { "-s", "--font-size" }, description = "Font size") // add an option to the CLI
   int fontSize = 14;
 
-  @Parameters( // Add a positional parameter to the CLI
+  // Add a positional parameter to the CLI. Use ${DEFAULT-VALUE} to show the default value in the usage.
+  @Parameters(
           paramLabel = "<word>",
           defaultValue = "Hello, picocli", // injects this value into 'words' variable
-          description = "Words to be translated into ASCII art."
+          description = "Words to be translated into ASCII art (default: ${DEFAULT-VALUE})."
   )
   private String[] words;
 
