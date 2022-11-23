@@ -13,7 +13,7 @@ public class TestTika {
 	public static void main(String[] args) {
 
 		String inputFolderName = "Tika Test Files";
-		String outputFolderName = "Tika Test Outputs";
+		String outputFolderName = "Tika_Test_Outputs";
 
 		// Set up an instance of Tika to do the parsing for us
 		Tika myTika = new Tika();
@@ -31,14 +31,11 @@ public class TestTika {
 					new PrintWriter(new FileWriter(outputFolderName  + File.separator + filename + ".txt") )  ) {
 
 				// Use Tika to parse the file, and write it to the output file
-				outFile.print( myTika.parseToString( file ) );
+				outFile.print(myTika.parseToString(file));
 				
 			} catch (IOException | TikaException e) {
 				e.printStackTrace();
-			} 
-			
-		} // file
-
-	} // main
-
-} // TestTika
+			}
+		}
+	}
+}

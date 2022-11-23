@@ -1,6 +1,8 @@
 *.class
 /target/
 
+Tika_Test_Outputs
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
