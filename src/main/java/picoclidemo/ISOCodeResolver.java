@@ -1,6 +1,6 @@
 package picoclidemo;
 
-// See https://picocli.info/quick-guide.html
+// Demo subcommands. See https://picocli.info/quick-guide.html
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
@@ -41,6 +41,9 @@ public class ISOCodeResolver {
   }
 
   public static void main(String[] args) {
+    args = new String[]{"help"};
+//    args = new String[]{"country", "cn", "fr", "th"};
+//    args = new String[]{"language", "de", "cs", "en"};
     int exitCode = new CommandLine(new ISOCodeResolver()).execute(args);
     System.exit(exitCode);
   }

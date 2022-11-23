@@ -1,6 +1,6 @@
 package picoclidemo;
 
-// See https://picocli.info/quick-guide.html
+// Quick start demo. See https://picocli.info/quick-guide.html.
 
 /**
  * ASCII Art: Basic Picocli based sample application
@@ -8,8 +8,6 @@ package picoclidemo;
  * Source Code: <a href="https://github.com/remkop/picocli/blob/master/picocli-examples/src/main/java/picocli/examples/i18n/I18NDemo.java">GitHub</a> 
  * @author Andreas Deininger
  *
- * Run from within an IDE with parameters:
- *    --font-size=9 Hello picocli
  */
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
@@ -63,6 +61,8 @@ public class ASCIIArt implements Runnable { // by implementing Runnable or Calla
   }
 
   public static void main(String[] args) {
+//    args = new String[]{"-h"};
+    args = new String[]{"--font-size=15", "Hello", "picocli"};
     // CommandLine.execute() parses the command line, handles errors, handles usage/version requests, and invokes run().
     int exitCode = new CommandLine(new ASCIIArt()).execute(args);
     System.exit(exitCode);
