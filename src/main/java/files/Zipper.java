@@ -58,7 +58,7 @@ public class Zipper {
 			ex.printStackTrace();   
 		}
 		
-	} // zipIt()
+	} // zip()
 	
 
 	/**
@@ -69,19 +69,21 @@ public class Zipper {
 	 */
 	private void generateFileList(File node, List<String> fileList) {
 		
-		// If the node is a file, add it
-		if (node.isFile()) { fileList.add(node.toString()); return; }
-
-		// If it's a directory, recursively call this method on every subnode in the directory
-		if (node.isDirectory()) {			
-			String[] subNode = node.list();
-			for(String fileName: subNode) { generateFileList(new File(node, fileName), fileList); }
+		if (node.isFile()) {
+			fileList.add(node.toString());
+			return;
 		}
 
-	} // generateFileList()
-	
+		if (node.isDirectory()) {
+			String[] subNode = node.list();
+			for(String fileName: subNode) {
+				generateFileList(new File(node, fileName), fileList);
+			}
+		}
+	}
 
 	// Start a new zip archive, and add to it everything under the "src" folder
-	public static void main(String[] args) { new Zipper("ZipDemo.zip").zip("src"); }
-
+	public static void main(String[] args) {
+		new Zipper("ZipDemo.zip").zip("src");
+	}
 }
