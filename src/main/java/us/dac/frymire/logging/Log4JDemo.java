@@ -13,14 +13,14 @@ public class Log4JDemo {
   public static void main(String[] args) {
 
     // Write a trace-level notice to the logger that we entered main()
-    logger.entry();		
+    logger.traceEntry();
 
     // Put something on the thread context, so we can use it to filter messages
     ThreadContext.put("eventTypes", "boring");
 
     // Instantiate and execute a method on the other class
     logger.trace("Call generateInsult().");
-    logger.info( (new Log4JDemoClass()).generateInsult(true, 6) );	    
+    logger.info( (new Log4JDemoClass()).generateInsult(true, 6) );
 
     // Here come events at various priorities for the logger
     logger.debug("Killing bugs.");
@@ -39,7 +39,6 @@ public class Log4JDemo {
     logger.info(new MatrixMessage(MatrixMessage.Format.ONE_LINE));
     logger.info(new MatrixMessage(MatrixMessage.Format.RECTANGLE));
 
-
     // Log a couple of MapMessages to demonstrate that we can filter on the fields
 
     MapMessage msg1 = new MapMessage();
@@ -52,9 +51,7 @@ public class Log4JDemo {
     msg2.put("userID", "yourMom");
     logger.info(msg2);
 
-
     // Tell the logger that we're exiting (at trace level)
-    logger.exit();
+    logger.traceExit();
   }
-
 }

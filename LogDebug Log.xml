@@ -1,78 +1,96 @@
-<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2013-09-12T09:46:10</date>
-  <millis>1378993570475</millis>
+  <date>2022-11-23T17:03:22.321987Z</date>
+  <millis>1669223002321</millis>
+  <nanos>987000</nanos>
   <sequence>0</sequence>
   <logger>us.dac.frymire</logger>
+  <level>FINER</level>
+  <class>JavaLogger</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>ENTRY</message>
+</record>
+<record>
+  <date>2022-11-23T17:03:22.326027Z</date>
+  <millis>1669223002326</millis>
+  <nanos>27000</nanos>
+  <sequence>1</sequence>
+  <logger>us.dac.frymire</logger>
   <level>FINE</level>
-  <class>us.frymire.loggingDemos.JavaLogger</class>
+  <class>us.dac.frymire.logging.JavaLogger</class>
   <method>main</method>
   <thread>1</thread>
   <message>Mark.</message>
 </record>
 <record>
-  <date>2013-09-12T09:46:10</date>
-  <millis>1378993570487</millis>
-  <sequence>1</sequence>
+  <date>2022-11-23T17:03:22.327982600Z</date>
+  <millis>1669223002327</millis>
+  <nanos>982600</nanos>
+  <sequence>2</sequence>
   <logger>us.dac.frymire</logger>
   <level>FINER</level>
-  <class>us.frymire.loggingDemos.JavaLogger</class>
+  <class>us.dac.frymire.logging.JavaLogger</class>
   <method>main</method>
   <thread>1</thread>
   <message>Mark Frymire</message>
 </record>
 <record>
-  <date>2013-09-12T09:46:10</date>
-  <millis>1378993570487</millis>
-  <sequence>2</sequence>
+  <date>2022-11-23T17:03:22.327982600Z</date>
+  <millis>1669223002327</millis>
+  <nanos>982600</nanos>
+  <sequence>3</sequence>
   <logger>us.dac.frymire</logger>
   <level>FINEST</level>
-  <class>us.frymire.loggingDemos.JavaLogger</class>
+  <class>us.dac.frymire.logging.JavaLogger</class>
   <method>main</method>
   <thread>1</thread>
   <message>Mark Edward Frymire</message>
 </record>
 <record>
-  <date>2013-09-12T09:46:10</date>
-  <millis>1378993570487</millis>
-  <sequence>3</sequence>
+  <date>2022-11-23T17:03:22.327982600Z</date>
+  <millis>1669223002327</millis>
+  <nanos>982600</nanos>
+  <sequence>4</sequence>
   <logger>us.dac.frymire</logger>
   <level>INFO</level>
-  <class>us.frymire.loggingDemos.JavaLogger</class>
+  <class>us.dac.frymire.logging.JavaLogger</class>
   <method>main</method>
   <thread>1</thread>
   <message>I like pizza.</message>
 </record>
 <record>
-  <date>2013-09-12T09:46:10</date>
-  <millis>1378993570512</millis>
-  <sequence>4</sequence>
+  <date>2022-11-23T17:03:22.364984500Z</date>
+  <millis>1669223002364</millis>
+  <nanos>984500</nanos>
+  <sequence>5</sequence>
   <logger>us.dac.frymire</logger>
   <level>WARNING</level>
-  <class>us.frymire.loggingDemos.JavaLogger</class>
+  <class>us.dac.frymire.logging.JavaLogger</class>
   <method>main</method>
   <thread>1</thread>
   <message>trouble here</message>
   <exception>
     <message>java.lang.Exception: You suck.</message>
     <frame>
-      <class>us.frymire.loggingDemos.JavaLogger</class>
+      <class>us.dac.frymire.logging.JavaLogger</class>
       <method>main</method>
-      <line>36</line>
+      <line>39</line>
     </frame>
   </exception>
 </record>
 <record>
-  <date>2013-09-12T09:46:10</date>
-  <millis>1378993570518</millis>
-  <sequence>5</sequence>
+  <date>2022-11-23T17:03:22.366985600Z</date>
+  <millis>1669223002366</millis>
+  <nanos>985600</nanos>
+  <sequence>6</sequence>
   <logger>us.dac.frymire</logger>
   <level>SEVERE</level>
-  <class>us.frymire.loggingDemos.JavaLogger</class>
+  <class>us.dac.frymire.logging.JavaLogger</class>
   <method>main</method>
   <thread>1</thread>
-  <message>You screwed up bigtime.</message>
+  <message>You screwed up big time.</message>
 </record>
 </log>

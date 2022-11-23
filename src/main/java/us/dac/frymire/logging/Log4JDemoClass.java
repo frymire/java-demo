@@ -25,10 +25,10 @@ public class Log4JDemoClass {
     logger.info(REAL, "1 + 2 = {}.", 1 + 2);
     logger.warn(FAKE, "Wet floor.");
     logger.error(REAL, "Tilt!");
-    logger.fatal(FAKE, "We're all gonna die!");  
+    logger.fatal(FAKE, "We're all gonna die!");
 
     // Wrap the exit call around the Object to be returned
-    return logger.exit("You're ugly.");
+    return logger.traceExit("You're ugly.");
 
   } // generateInsult
 

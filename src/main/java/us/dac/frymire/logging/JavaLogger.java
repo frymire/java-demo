@@ -9,25 +9,26 @@ import java.util.logging.FileHandler;
 public class JavaLogger {
 
   private static Logger logger = Logger.getLogger("us.dac.frymire");
-  private Handler fh;
+  private Handler handler;
 
   public JavaLogger() {
 
     try {
-      fh = new FileHandler("LogDebug Log.xml");			 
+      handler = new FileHandler("LogDebug Log.xml");
     } catch (IOException e) {
       e.printStackTrace();
     }
 
-    Logger.getLogger("").addHandler(fh);
+    Logger.getLogger("").addHandler(handler);
     Logger.getLogger("us.dac.frymire").setLevel(Level.FINEST);		 
   }
 
 
   public static void main(String[] args) {
 
-    logger.entering("JavaLogger", "main"); // Doesn't seem to work.
+    new JavaLogger();
 
+    logger.entering("JavaLogger", "main"); // Doesn't seem to work.
     logger.fine("Mark.");
     logger.finer("Mark Frymire");
     logger.finest("Mark Edward Frymire");
@@ -39,6 +40,6 @@ public class JavaLogger {
       logger.log(Level.WARNING, "trouble here", ex);
       // Or similarly... logger.warning("trouble here\n" + ex);
       logger.severe("You screwed up big time.");		
-    }	
+    }
   }
 } 

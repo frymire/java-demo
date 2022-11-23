@@ -53,7 +53,7 @@ public class MongoTest {
 		BasicDBObject doc = new BasicDBObject("name", "MongoDB");
 		doc.append("type", "database");
 		doc.append("count", 1);
-		doc.append("info", new BasicDBObject("x", 203).append("y", 102));
+		doc.append("info", new BasicDBObject("x", 203).append("y", 103));
 		coll.insert(doc);
 
 		// Get the first document in the collection and print it.
