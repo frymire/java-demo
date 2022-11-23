@@ -38,11 +38,12 @@ public class ISOCodeResolver {
   }
 
   public static void main(String[] args) {
-    args = new String[]{"help"};
-//    args = new String[]{"country", "cn", "fr", "th"};
-//    args = new String[]{"language", "de", "cs", "en"};
-    int exitCode = new CommandLine(new ISOCodeResolver()).execute(args);
-    System.exit(exitCode);
+    CommandLine commandLine = new CommandLine(new ISOCodeResolver());
+    commandLine.execute(new String[]{"help"});
+    System.out.println();
+    commandLine.execute(new String[]{"country", "cn", "fr", "th"});
+    System.out.println();
+    commandLine.execute(new String[]{"language", "de", "cs", "en"});
   }
 }
 

@@ -54,10 +54,15 @@ public class ASCIIArt implements Runnable { // by implementing Runnable or Calla
   }
 
   public static void main(String[] args) {
+
 //    args = new String[]{"-h"};
     args = new String[]{"--font-size=15", "Hello", "picocli"};
+
+    CommandLine commandLine = new CommandLine(new ASCIIArt());
+    commandLine.usage(System.out);
+
     // CommandLine.execute() parses the command line, handles errors, handles usage/version requests, and invokes run().
-    int exitCode = new CommandLine(new ASCIIArt()).execute(args);
+    int exitCode = commandLine.execute(args);
     System.exit(exitCode);
   }
 }

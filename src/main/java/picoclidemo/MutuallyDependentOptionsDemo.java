@@ -33,7 +33,7 @@ public class MutuallyDependentOptionsDemo implements Runnable {
   }
 
   public static void main(String[] args) {
-//    args = new String[]{"-b", "5"}; // error, if any argument is specified all three are required
+//    args = new String[]{"-b", "5"}; // error, if any argument is specified, all three are required
     args = new String[]{"-a", "4", "-b=5", "-c=6"};
     CommandLine commandLine = new CommandLine(new MutuallyDependentOptionsDemo());
     System.exit(commandLine.execute(args));
