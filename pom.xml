@@ -3,7 +3,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>us.dac.frymire</groupId>
+  <groupId>io.github.frymire</groupId>
   <artifactId>java-demo</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
