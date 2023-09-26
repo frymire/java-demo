@@ -1,3 +1,4 @@
+package programmingstructures;
 
 public class CommandLineParameters {
 
