@@ -7,7 +7,7 @@ public class Covariance {
 
   public static void main(String[] args) {
 
-    // With this declaration, you can assign any list of subtype of Number.
+    // With this declaration, you can assign a list of any subtype of Number.
     List<? extends Number> numbers = null;
 
     List<Integer> integers = new ArrayList<>();
@@ -24,7 +24,7 @@ public class Covariance {
     System.out.println(numbers.get(0));
 
     // However, you aren't allowed to modify the numbers list. Due to type erasure, the type
-    // of the list (e.g. ArrayList<Float>, ArrayList<Integer> is unavailable at runtime, so
+    // of the list (e.g. ArrayList<Float>, ArrayList<Integer>) is unavailable at runtime, so
     // it wouldn't be able to ensure that an element of the correct type is being added.
 //    numbers.add(5.6f); // compile error
   }
