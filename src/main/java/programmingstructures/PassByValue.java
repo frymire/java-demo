@@ -7,32 +7,21 @@ public class PassByValue {
     System.out.println("Inside changeTo10(): " + x);
   }
 
-  static void modifyReference(ValueHolder valueHolder) {
-    // The valueHolder variable is local. Changing its value doesn't affect the client's valueHolder instance.
-    valueHolder = new ValueHolder(10);
+  static void modifyReference(ValueHolder valueHolderReference) {
+    // The valueHolderReference variable is local. Changing its value doesn't affect the client's instance.
+    valueHolderReference = new ValueHolder(10);
   }
 
-  static void modifyObject(ValueHolder valueHolder) {
-    // valueHolder is the value of the reference, so here we are modifying the client's instance.
-    valueHolder.value = 10;
+  static void modifyObject(ValueHolder valueHolderReference) {
+    // valueHolderReference is the value of the reference, so here we are modifying the client's instance.
+    valueHolderReference.value = 10;
   }
 
   static class ValueHolder {
-
     private int value;
-
-    public ValueHolder(int value) {
-      this.value = value;
-    }
-
-    public void setValue(int value) {
-      this.value = value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
+    public ValueHolder(int value) { setValue(value); }
+    public void setValue(int value) { this.value = value; }
+    @Override public String toString() { return String.valueOf(value); }
   }
 
   public static void main(String[] args) {

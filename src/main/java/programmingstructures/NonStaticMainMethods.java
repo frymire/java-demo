@@ -1,7 +1,5 @@
 package programmingstructures;
 
-
-
 public class NonStaticMainMethods {
 	
 	private int x = 0;
