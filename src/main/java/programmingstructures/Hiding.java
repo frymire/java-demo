@@ -1,29 +1,23 @@
 package programmingstructures;
 
-
 public class Hiding {
 
-	public class Parent {		
-		protected String m_protectMe = "Parent";
-		public void talk() { System.out.println(m_protectMe); }
+	public static class Parent {
+		protected String protectMe = "Parent";
+		public void talk() { System.out.println(protectMe); }
 	}
 
-	public class Child extends Parent {
+	public static class Child extends Parent {
+
+		private final String protectMe = "Child"; // hides Parent.protectMe!
 		
-		// Without any warnings or annotations, Java lets you hide the m_protectMe in the Parent class
-		private String m_protectMe = "Child";
-		
-		// This method will use the local value of m_protectMe, which hides that of the parent, but any methods
-		// called on the parent will use *the parent's* value of m_protectMe.
-		public void childSpeak() { System.out.println(m_protectMe); }
+		// This method use Child.protectMe, but parent methods called on child instances will use Parent.protectMe.
+		public void childSpeak() { System.out.println(protectMe); }
 	}	
 	
 	public static void main(String[] args) {
-		
-		// The call to childSpeak() uses the child's copy of m_protectMe, while the call to talk(), a method of
-		// the parent's class, will use the parent's copy of m_protectMe, which is different.  Java is horrible.
-   		Child c = (new Hiding()).new Child();
-   		c.childSpeak(); 	// "Child"
-   		c.talk(); 			// "Parent"
-   	}
+		Child child = new Child();
+   	child.childSpeak(); // uses the child's copy of protectMe -> "Child"
+   	child.talk(); // uses the parent's copy of protectMe -> "Parent" !
+	}
 }
