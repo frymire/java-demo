@@ -7,15 +7,17 @@ public class Base64Demo {
 
   public static void main(String[] args) {
 
-    int original = 123456789;
+    int originalInt = 123456789;
+    String encodedInt = intToBase64(originalInt);
+    System.out.println("Encoded int: " + encodedInt);
+    int decodedInt = base64ToInt(encodedInt);
+    System.out.println("Decoded value: " + decodedInt);
 
-    // Convert int to Base64
-    String encoded = intToBase64(original);
-    System.out.println("Encoded int: " + encoded);
-
-    // Convert Base64 back to int
-    int decoded = base64ToInt(encoded);
-    System.out.println("Decoded value: " + decoded);
+    String originalString = "Hello";
+    String encodedString = stringToBase64(originalString);
+    System.out.println("Encoded string: " + encodedString);
+    String decodedString = base64ToString(encodedString);
+    System.out.println("Decoded string: " + decodedString);
   }
 
   public static String intToBase64(int value) {
@@ -26,5 +28,14 @@ public class Base64Demo {
   public static int base64ToInt(String base64) {
     byte[] bytes = Base64.getDecoder().decode(base64);
     return ByteBuffer.wrap(bytes).getInt();
+  }
+
+  public static String stringToBase64(String value) {
+    return Base64.getEncoder().encodeToString(value.getBytes());
+  }
+
+  public static String base64ToString(String base64) {
+    byte[] bytes = Base64.getDecoder().decode(base64);
+    return new String(bytes);
   }
 }
