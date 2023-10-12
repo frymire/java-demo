@@ -1,3 +1,5 @@
+package crypto;
+
 import java.io.FileInputStream;
 import java.security.MessageDigest;
 
