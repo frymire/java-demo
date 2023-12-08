@@ -12,6 +12,7 @@
   <description>Reminders to myself how to do things in Java.</description>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <immutables.version>2.9.2</immutables.version>
   </properties>
 
