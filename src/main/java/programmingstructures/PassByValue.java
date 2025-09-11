@@ -2,13 +2,14 @@ package programmingstructures;
 
 public class PassByValue {
 
-  static void changeTo10(int x) {
+  static void changeTo10(@SuppressWarnings("ParameterCanBeLocal") int x) {
     x = 10;
     System.out.println("Inside changeTo10(): " + x);
   }
 
-  static void modifyReference(ValueHolder valueHolderReference) {
+  static void modifyReference(@SuppressWarnings("ParameterCanBeLocal") ValueHolder valueHolderReference) {
     // The valueHolderReference variable is local. Changing its value doesn't affect the client's instance.
+    //noinspection UnusedAssignment
     valueHolderReference = new ValueHolder(10);
   }
 
@@ -32,18 +33,18 @@ public class PassByValue {
     // value doesn't change the value at the client level.
     int a = 5;
     changeTo10(a);
-    System.out.println("Client level, after changeTo10(): " + a + "\n");  // Prints 5, not 10.
+    System.out.println("Client level, after changeTo10(): " + a + "\n");  // prints 5, not 10
 
     ValueHolder valueHolder = new ValueHolder(5);
-    System.out.println(valueHolder);
+    System.out.println(valueHolder);  // prints 5
 
-    // We pass the *value* of the reference...by value. We don't pass the reference itself, so a
-    // function that modifies what the reference points to doesn't affect the client level instance.
+    // We pass the *value* of the reference...by value. We don't pass the reference itself, so a function
+    // that modifies what the local reference *points to* doesn't affect the client level instance.
     modifyReference(valueHolder);
-    System.out.println(valueHolder);
+    System.out.println(valueHolder);  // prints 5, not 10
 
     // But a function can can modify the passed object itself.
     modifyObject(valueHolder);
-    System.out.println(valueHolder);
+    System.out.println(valueHolder);  // prints 10
   }
 }
