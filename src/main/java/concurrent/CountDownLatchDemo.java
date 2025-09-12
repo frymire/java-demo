@@ -6,24 +6,24 @@ public class CountDownLatchDemo {
 
   record Task(int id) {
     public void execute() throws InterruptedException {
-        System.out.println("Task " + id + " starting...");
-        Thread.sleep(1000L * id); // simulate work
-        System.out.println("  Task " + id + " complete.");
-      }
+      System.out.println("Task " + id + " starting...");
+      Thread.sleep(1000L * id); // simulate work
+      System.out.println("  Task " + id + " complete.");
     }
+  }
 
   record TaskRunner(Task task, CountDownLatch latch) implements Runnable {
     @Override
-      public void run() {
-        try {
-          task.execute();
-        } catch (InterruptedException e) {
-          Thread.currentThread().interrupt();
-        } finally {
-          latch.countDown();
-        }
+    public void run() {
+      try {
+        task.execute();
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+      } finally {
+        latch.countDown();
       }
     }
+  }
 
   public static void main(String[] args) throws InterruptedException {
     final int numTasks = 3;
